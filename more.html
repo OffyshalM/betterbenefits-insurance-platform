@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L&J Better Benefits</title>
+    <link rel="icon" type="image/x-icon" href="images/L & J Logo.jpeg" sizes="32x32">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+ * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+   }
+
+body{
+     font-family: "Poppins";
+}
+
+/* Container to center the logo */
+header {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     
+    padding: 20px;           
+    width: 100%;
+}
+
+/* Make the logo small and responsive */
+.logo img {
+    max-width: 150px;       /* Limits the size on desktop */
+    width: 100%;             /* On small screens, it takes up 40% of the width */
+    height: auto;           /* Maintains aspect ratio (prevents stretching) */
+    display: block;         /* Removes bottom whitespace */
+}
+
+/* Mobile Specific Adjustment */
+@media (max-width: 480px) {
+    .logo img {
+        max-width: 100px;   /* Makes it even smaller on tiny phones */
+    }
+}
+/* The Outer Section: ensures the content stays centered on the page */
+.home-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px; /* Space at top and bottom */
+    background-color: #ffffff; /* Or any background color you prefer */
+}
+
+/* The Text Wrapper: limits width for better readability */
+.welcome-container {
+    text-align: center;
+    max-width: 800px;
+}
+
+/* The Heading */
+.welcome-container h1 {
+    color: rgb(12, 6, 99);
+    font-size: clamp(2rem, 5vw, 3rem); /* Dynamically scales text for mobile */
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+/* The Paragraph */
+.welcome-container p {
+    color: rgba(12, 6, 99, 0.8); /* Slightly softer version of your color */
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+/* The Highlighted Span */
+.welcome-container .highlight {
+    display: block; /* Moves to a new line on larger screens */
+    margin-top: 10px;
+    font-weight: 600;
+    color: rgb(12, 6, 99);
+}
+
+/* Mobile Tweak */
+@media (max-width: 600px) {
+    .home-section {
+        padding: 40px 15px;
+    }
+    .welcome-container p {
+        font-size: 1.1rem;
+    }
+}
+.strategy-section {
+    padding: 60px 10%;
+    background-color: #f9f9f9;
+}
+
+.strategy-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 30px;
+    align-items: start;
+}
+
+/* This makes the title stay at the top and cross both columns */
+.strategy-title {
+    grid-column: 1 / span 2; 
+    color: rgb(12, 6, 99);
+    font-size: 2.8rem; /* Made it slightly larger as a main header */
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-align: left; /* Or 'center' if you prefer it centered above the two boxes */
+    line-height: 1.2;
+}
+
+/* Text Side */
+.strategy-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Video Side */
+.strategy-video video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Mobile View Fix */
+@media (max-width: 768px) {
+    .strategy-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .strategy-title {
+        grid-column: 1;
+        font-size: 2rem;
+        text-align: center;
+    }
+}
+/* Fix for mobile view so it doesn't stretch weirdly */
+@media (max-width: 768px) {
+    .strategy-container {
+        grid-template-columns: 1fr;
+        align-items: center;
+    }
+}
+
+.content-body p {
+    color: rgba(18, 14, 79, 0.85);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    font-weight: 400;
+}
+
+.contact-line {
+    margin: 20px 0;
+    color: rgb(12, 6, 99);
+    font-size: 1.1rem;
+}
+
+.quote-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(12, 6, 99);
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px; /* Professional slight roundness */
+    border: 2px solid rgb(12, 6, 99);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(12, 6, 99, 0.2);
+    margin-top: 10px;
+}
+
+/* Button Hover State */
+.quote-btn:hover {
+    background-color: transparent;
+    color: rgb(12, 6, 99);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(12, 6, 99, 0.3);
+}
+
+/* Video Side */
+.strategy-video video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* RESPONSIVE: Stack them on mobile */
+@media (max-width: 992px) {
+    .strategy-container {
+        grid-template-columns: 1fr; /* Stack vertically */
+        text-align: center;
+    }
+
+    .strategy-text h2 {
+        font-size: 1.7rem;
+    }
+}
+/* Container for the Cards */
+.services-section {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive Grid: 4 columns on desktop, 1 on mobile */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Individual Card Styling */
+.service-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eee;
+    transition: box-shadow 0.3s ease;
+}
+
+/* --- BOUNCE ANIMATION --- */
+@keyframes cardBounce {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-15px); }
+    50% { transform: translateY(-10px); }
+    70% { transform: translateY(-12px); }
+    100% { transform: translateY(-10px); }
+}
+
+.service-card:hover {
+    animation: cardBounce 0.6s ease-out forwards;
+    box-shadow: 0 20px 40px rgba(12, 6, 99, 0.15); /* Blue-tinted shadow */
+    border-color: rgba(12, 6, 99, 0.2);
+}
+
+/* Video inside the Card */
+.card-video video {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background: #000;
+}
+
+/* Content Area */
+.card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Makes all cards same height */
+}
+
+.card-content h3 {
+    color: rgb(12, 6, 99);
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    min-height: 50px; /* Keeps titles aligned across cards */
+}
+
+.card-content p {
+    /* The "Almost Black-Blue" Texture */
+    color: rgba(12, 6, 99, 0.85); 
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Pushes button to bottom */
+}
+
+/* The Quote Button */
+.quote-btn-small {
+    background-color: rgb(12, 6, 99);
+    color: #ffffff;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.quote-btn-small:hover {
+    background-color: #1a10cf;
+}
+.service-text h2{
+    text-align: center;
+    color: #1a10cf;
+    margin-bottom: 14px;
+}
+.freedom-section {
+    padding: 80px 10%;
+    background-color: #ffffff;
+}
+
+.freedom-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Split for text and image */
+    gap: 40px;
+    align-items: start; /* Aligns list and image to the same top line */
+}
+
+/* 1. Header spans the full width on top */
+.freedom-header {
+    grid-column: 1 / span 2; 
+    margin-bottom: 20px;
+}
+
+.freedom-header h2 {
+    color: rgb(12, 6, 99);
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.sub-heading {
+    color: #555;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+/* 2. Text Content (Left Column) */
+.freedom-text {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 3. Image (Right Column) */
+.freedom-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* 4. Mobile Responsiveness */
+@media (max-width: 768px) {
+    .freedom-container {
+        grid-template-columns: 1fr; /* Stack everything in one column */
+    }
+    
+    .freedom-header {
+        grid-column: 1;
+        text-align: center;
+    }
+}
+.sub-heading {
+    color: #1a10cf;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.intro-p {
+    color: rgba(12, 6, 99, 0.85); /* Dark Blue-Black */
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+/* List Items */
+.benefit-list {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.benefit-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.benefit-list p {
+    color: rgba(12, 6, 99, 0.85);
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.benefit-list p strong {
+    color: rgb(12, 6, 99);
+    display: block; /* Puts the bold title on its own line for clarity */
+    margin-bottom: 3px;
+}
+
+/* The Checkmark "Button" */
+.check-icon {
+    background-color: rgb(12, 6, 99);
+    color: white;
+    min-width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem;
+    margin-top: 4px;
+    box-shadow: 0 4px 10px rgba(12, 6, 99, 0.2);
+}
+
+/* Image Styling */
+.freedom-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    object-fit: cover;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .freedom-container {
+        grid-template-columns: 1fr; /* Stacks on tablet/mobile */
+        text-align: center;
+    }
+    
+    .benefit-list li {
+        text-align: left; /* Keep the list items left-aligned for readability */
+    }
+
+    .freedom-image {
+        order: -1; /* Image appears above text on mobile */
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+</style>
+
+
+<body>
+
+    <header><div class="logo"><img src="../images/L & J Logo.jpeg"></div></header>
+
+<section class="strategy-section">
+    <div class="strategy-container">
+        
+        <h2 class="strategy-title">Secure & Multiply Your Wealth with Tax-Free Strategies</h2>
+
+        <div class="strategy-text">
+            <div class="content-body">
+                <p>You’ve worked hard to build your savings, but is your retirement nest egg safe? Leaving your future in accounts like <strong>401(k), 403B, or IRA</strong> means you are exposed to market crashes and rising taxes.</p>
+                
+                <p>Think back to 2008 or the COVID crisis. If the market drops or taxes skyrocket, how much of your hard-earned money will actually stay in your pocket? Taxes and market volatility are the biggest killers of wealth creation.</p>
+                
+                <p>We specialize in strategies that keep "Uncle Sam" away from your savings. Our solutions ensure your retirement is <strong>tax-efficient, risk-free, and entirely yours.</strong></p>
+            </div>
+
+            <p class="contact-line">Call us today: <strong> +1(973)489-1971</strong></p>
+            
+            <a href="./loginQuote.php" class="quote-btn">Get A Quote Now &nbsp; &#10142;</a>
+        </div>
+
+        <div class="strategy-video">
+            <video class="elementor-video" autoplay loop controls muted playsinline controlslist="nodownload">
+                <source src="https://leaderlifefis.com/wp-content/uploads/2024/05/WELCOME-TO-LEADER-LIFE-FINANCIAL-VIDEO-1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+    </div>
+</section>
+<section class="services-section">
+    <div class="service-text">
+        <h2>OUR SERVICE</h2>
+    </div>
+
+    <div class="services-grid">
+        
+        <div class="service-card">
+            <div class="card-video">
+                <video src="../images/video1.mp4" muted loop playsinline autoplay></video>
+            </div>
+            <div class="card-content">
+                <h3>Income Protection & Replacement</h3>
+                <p>Your paycheck is your greatest asset. We implement strategies to ensure your family’s lifestyle remains undisturbed even if you can't work.</p>
+                <a href="./loginQuote.php" class="quote-btn-small">Get Quote Now</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="card-video">
+                <video src="../images/video2.mp4" muted loop playsinline autoplay></video>
+            </div>
+            <div class="card-content">
+                <h3>Smart College Saving Plans</h3>
+                <p>Don't let tuition debt burden your children's future. Our smart saving plans focus on tax-efficient growth to ensure funds are ready when they are needed.</p>
+                <a href="./loginQuote.php" class="quote-btn-small">Get Quote Now</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="card-video">
+                <video src="../images/video3.mp4" muted loop playsinline autoplay></video>
+            </div>
+            <div class="card-content">
+                <h3>Smart Mortgage Protection</h3>
+                <p>Your home is your sanctuary. Our protection strategies ensure your mortgage is paid off in the event of an emergency, keeping your family safe.</p>
+                <a href="./loginQuote.php" class="quote-btn-small">Get Quote Now</a>
+            </div>
+        </div>
+
+       
+
+    </div>
+</section>
+<section class="freedom-section">
+    <div class="freedom-container">
+        
+        <div class="freedom-header">
+            <h2>Ready to Embark on Your Journey to Financial Freedom?</h2>
+            <h3 class="sub-heading">Your Path to Security Starts Here</h3>
+        </div>
+
+        <div class="freedom-text">
+            <p class="intro-p">
+                Our team of passionate and experienced financial experts is dedicated to 
+                designing a risk-free, tax-efficient financial strategy tailored just for you. 
+                We focus on a comprehensive approach that:
+            </p>
+            
+            <ul class="benefit-list">
+                <li>
+                    <span class="check-icon">&#10003;</span>
+                    <p><strong>Maximized Growth:</strong> We optimize your wealth accumulation while strategically eliminating market losses.</p>
+                </li>
+                <li>
+                    <span class="check-icon">&#10003;</span>
+                    <p><strong>Capital Preservation:</strong> We safeguard your hard-earned gains to provide unwavering financial security.</p>
+                </li>
+                <li>
+                    <span class="check-icon">&#10003;</span>
+                    <p><strong>Tax-Efficiency:</strong> We minimize your tax burden and ensure a seamless, tax-free wealth transfer to the next generation.</p>
+                </li>
+                <li>
+                    <span class="check-icon">&#10003;</span>
+                    <p><strong>Guaranteed Income:</strong> we secure a reliable, lifetime stream of income that stays with you throughout retirement.</p>
+                </li>
+            </ul>
+
+            <a href="./loginQuote.php" class="quote-btn">Get Quote Now &nbsp; &#10142;</a>
+        </div>
+
+        <div class="freedom-image">
+            <img src="../images/picture01.jpeg" alt="Financial Freedom and Security">
+        </div>
+
+    </div>
+</section>
+</body>
+
+
+<script>
+// 1. Scroll Reveal Animation
+// This makes the sections and cards fade in smoothly as you scroll down
+const observerOptions = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+        }
+    });
+}, observerOptions);
+
+// Apply to Strategy Section, Service Cards, and Freedom Section
+document.querySelectorAll('.strategy-container, .service-card, .freedom-container').forEach(el => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(30px)";
+    el.style.transition = "all 0.8s ease-out";
+    observer.observe(el);
+});
+
+const serviceVideos = document.querySelectorAll('.card-video video');
+
+serviceVideos.forEach(video => {
+    video.parentElement.parentElement.addEventListener('mouseenter', () => {
+        video.play();
+    });
+    
+    video.parentElement.parentElement.addEventListener('mouseleave', () => {
+
+    });
+});
+
+
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+</script>
+
+
+</html>
